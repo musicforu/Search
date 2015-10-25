@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= title %></title>	
+	<link rel='stylesheet' href='/stylesheets/style.css'>
+</head>
+<body>
+    <h1><%= title %></h1>
+    <!-- 以表格的形式展示查询结果-->
+    <table cellpadding="10">
+       <tr class='first'>     
+            <!-- 遍历查询结果中指标（键）的名称放在表格第一行--> 
+            <% for (var j in content[0] ) {%>
+                <td class='first'><%= j%></td>
+            <%}%>                 
+       </tr>
+       <!-- 显示查询结果-->
+       <% for(var i=0;i<content.length;i++){%>
+         <tr class='content'>
+           <% for(var j in content[i]){%>
+               <td class='content'><%= content[i][j]%></td>
+           <%}%>
+         </tr>
+       <%}%>    
+    </table> 
+	<!-- <div><%= content %></div> -->
+</body>
+</html>
